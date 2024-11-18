@@ -19,6 +19,9 @@ def schedule_email_notification(sender, instance, created, **kwargs):
         try:
             # Ensure booking_time is timezone-aware
             notification_time = instance.booking_time - timedelta(seconds=5)
+
+            # # Ensure booking_time is timezone-aware
+            # notification_time = instance.booking_time - timedelta(hours=24)
             now_time = now()
 
             # Calculate countdown in seconds
@@ -35,3 +38,14 @@ def schedule_email_notification(sender, instance, created, **kwargs):
                 print("Notification time is in the past. Email will not be scheduled.")
         except Exception as e:
             print(f"Error scheduling email notification: {e}")
+
+
+
+# run redisserver
+# redis-server
+# run celery
+# celery -A projectlabschedule worker --loglevel=info
+# stop redis
+# sudo systemctl stop redis
+# redis status
+# ps aux | grep redis

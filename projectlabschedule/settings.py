@@ -138,3 +138,12 @@ AUTH_USER_MODEL='loginapp.Userprofile'
 CELERY_BROKER_URL = 'redis://localhost:6379/0'
 CELERY_ACCEPT_CONTENT = ['json']
 CELERY_TASK_SERIALIZER = 'json'
+
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+ # Commonly used port for TLS
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = 'sharafudheentrycode@gmail.com'
+EMAIL_HOST_PASSWORD = 'phgp eedu oney hzof' 
